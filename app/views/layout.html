@@ -31,7 +31,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  IFS Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -43,6 +43,14 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+    classes: 'govuk-width-container'
+  }) }}
+  {% include "includes/navigation.html" %}
 {% endblock %}
 
 {% if useAutoStoreData %}

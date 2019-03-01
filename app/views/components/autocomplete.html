@@ -5,20 +5,28 @@
   Autocomplete
 {% endblock %}
 
+{% set currentSection = "component" %}
+{% set currentPage = "autocomplete" %}
+
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Autocomplete
-      </h1>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/sub-navigation.html" %}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <span class="govuk-caption-xl">
+            Components
+        </span>
+        <h1 class="govuk-heading-xl">
+            Autocomplete
+        </h1>
 
-      <select id="location-picker">
-        <option value="fr">France</option>
-        <option value="de">Germany</option>
-        <option value="gb">United Kingdom</option>
-      </select>
-
+        <select id="location-picker">
+            <option value="fr">France</option>
+            <option value="de">Germany</option>
+            <option value="gb">United Kingdom</option>
+        </select>
     </div>
 </div>
 

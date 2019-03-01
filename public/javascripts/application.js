@@ -14,12 +14,14 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
-  accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('#location-picker')
-  })
-  accessibleAutocomplete({
-    element: document.querySelector('#location-picker'),
-    id: 'location-picker', // To match it to the existing <label>.
-    source: countries
-  })
+  if (document.querySelector('#location-picker')) {
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('#location-picker')
+    })
+    accessibleAutocomplete({
+      element: document.querySelector('#location-picker'),
+      id: 'location-picker', // To match it to the existing <label>.
+      source: countries
+    })
+  }
 })

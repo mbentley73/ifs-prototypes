@@ -1,0 +1,37 @@
+
+
+<nav class="ifs-navigation govuk-clearfix">
+  <ul class="ifs-navigation__list govuk-width-container">
+    {% if currentSection == 'get-started' %}
+    <li class="ifs-navigation--current-page">
+      <a class="govuk-link" href="/">Get started</a>
+    </li>
+    {% else %}
+    <li>
+      <a class="govuk-link" href="/">Get started</a>
+    </li>
+    {% endif %}
+
+    {% if currentSection == 'component' %}
+    <li class="ifs-navigation--current-page">
+      <a class="govuk-link" href="/components">Components</a>
+    </li>
+    {% else %}
+    <li>
+      <a class="govuk-link" href="/components">Components</a>
+    </li>
+    {% endif %}
+
+    {% if currentSection == 'prototype' %}
+    <li class="ifs-navigation--current-page">
+      <a class="govuk-link" href="/prototypes">Prototypes</a>
+    </li>
+    {% else %}
+    <li>
+      <a class="govuk-link" href="/prototypes">Prototypes</a>
+    </li>
+    {% endif %}
+
+  </ul>
+</nav>
+
