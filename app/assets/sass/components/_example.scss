@@ -1,0 +1,35 @@
+.example {
+  border: 1px solid $govuk-border-colour;
+
+  .example-component {
+    padding: 60px 30px 30px;
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+
+  .example-tab--navigation {
+    border-bottom: 1px solid $govuk-border-colour;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      display: inline-block;
+      position: relative;
+
+      a {
+        padding: 15px;
+        text-decoration: none;
+        display: block;
+        @include govuk-font(19);
+        font-weight: bold;
+      }
+    }
+  }
+
+  .example-tab {
+    padding: 15px;
+    background-color: govuk-colour("grey-4");
+    display: none;
+  }
+}

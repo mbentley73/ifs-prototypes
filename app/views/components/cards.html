@@ -1,0 +1,12 @@
+{% macro card(heading, body, url) %}
+<div class="card-container">
+  <a href="{{ url }}" class="card">
+    <h2 class="govuk-heading-m">
+      {{ heading }}
+    </h2>
+    <p class="govuk-body">
+      {{ body }}
+    </p>
+  </a>
+</div>
+{% endmacro %}

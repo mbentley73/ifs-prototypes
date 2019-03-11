@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% import "components/sub-navigation.html" as subNavigation %}
+
+{% block pageTitle %}
+  Page template
+{% endblock %}
+
+{% set patternLibraryActive = true %}
+{% set showNavigation = true %}
+{% set currentSection = "styles" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+            {name: 'Colour', url: '/pattern-library/styles/colour', currentPage: false},
+            {name: 'Layout', url: '/pattern-library/styles/layout', currentPage: false},
+            {name: 'Page template', url: '/pattern-library/styles/page-template', currentPage: true},
+            {name: 'Spacing', url: '/pattern-library/styles/spacing', currentPage: false},
+            {name: 'Typography', url: '/pattern-library/styles/typography', currentPage: false}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Page template
+        </h1>
+    </div>
+</div>
+
+{% endblock %}

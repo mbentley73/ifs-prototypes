@@ -1,25 +1,24 @@
 
 {% extends "layout.html" %}
-{% from "warning-text/macro.njk" import govukWarningText %}
+{% import "components/sub-navigation.html" as subNavigation %}
 
 {% block pageTitle %}
-IFS Components library
+  Autocomplete
 {% endblock %}
 
-{% set currentSection = "component" %}
+{% set patternLibraryActive = true %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-        {% include "includes/sub-navigation.html" %}
+        &nbsp;
     </div>
     <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">
-            IFS Components
+            Patterns
         </h1>
-
-        <p>Add description</p>
+        <p class="govuk-body"></p>
     </div>
 </div>
 

@@ -87,7 +87,7 @@
   cursor: pointer;
   display: block;
   position: relative;
-  @include govuk-font(19)
+  @include govuk-font(19);
 }
 
 .autocomplete__option > * {

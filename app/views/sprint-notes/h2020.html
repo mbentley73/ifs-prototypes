@@ -1,0 +1,66 @@
+
+{% extends "layout.html" %}
+{% import "components/sub-navigation.html" as subNavigation %}
+
+{% block pageTitle %}
+IFS Prototypes
+{% endblock %}
+
+{% set sprintNotesActive = true %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+        {name: 'IFS', url: 'ifs', currentPage: false},
+        {name: 'Horizon2020', url: 'h2020', currentPage: true},
+        {name: 'ACC', url: 'acc', currentPage: false}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Horizon2020
+        </h1>
+        <h2 class="govuk-heading-m">Sprint 0</h2>
+        <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id molestie metus, quis facilisis ante. Pellentesque lobortis velit non lectus congue ornare. Nam pellentesque urna nec consequat placerat. Fusce tempus enim dignissim blandit rutrum. Mauris gravida nisl sit amet neque rutrum, vitae convallis eros elementum. Integer bibendum dapibus nisl eu porta. Fusce nec tellus at eros cursus pellentesque. Donec ac nunc felis. Aenean auctor eros mauris, non iaculis ex molestie id. Vivamus ex metus, euismod ac interdum sit amet, maximus a nibh. Curabitur consectetur id odio id facilisis.</p>
+        <h2 class="govuk-heading-m">What we did</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="#" class="govuk-link">Lorem ipsum dolor sit amet</a> (Prototype)
+            </li>
+            <li>
+                <a href="#" class="govuk-link">Lorem ipsum dolor sit amet</a> (PDF)
+            </li>
+            <li>
+                <a href="#" class="govuk-link">Lorem ipsum dolor sit amet</a> (PDF)
+            </li>
+            <li>
+                <a href="#" class="govuk-link">Lorem ipsum dolor sit amet</a> (Prototype)
+            </li>
+            <li>
+                <a href="#" class="govuk-link">Lorem ipsum dolor sit amet</a> (Document)
+            </li>
+        </ul>
+        <h2 class="govuk-heading-m">What we laernt</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                Lorem ipsum dolor sit amet
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

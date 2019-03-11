@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+{% import "components/sub-navigation.html" as subNavigation %}
+
+{% block pageTitle %}
+IFS Prototypes
+{% endblock %}
+
+{% set blogActive = true %}
+{% set showNavigation = true %}
+{% set currentSection = "component" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+        {name: '2019', url: '2019', currentPage: true}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Blog
+        </h1>
+        <section class="govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">Accessibility testing</h2>
+            <span class="govuk-caption-m"><a href="#">Tom Davey</a> | March 4, 2019</span>
+            <img class="govuk-!-margin-top-4 govuk-!-margin-bottom-4" src="/public/images/3by2.jpg" width="100%">
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id molestie metus, quis facilisis ante. Pellentesque lobortis velit non lectus congue ornare. Nam pellentesque urna nec consequat placerat. Fusce tempus enim dignissim blandit rutrum. Mauris gravida nisl sit amet neque rutrum, vitae convallis eros elementum. Integer bibendum dapibus nisl eu porta. Fusce nec tellus at eros cursus pellentesque. Donec ac nunc felis. Aenean auctor eros mauris, non iaculis ex molestie id. Vivamus ex metus, euismod ac interdum sit amet, maximus a nibh. Curabitur consectetur id odio id facilisis.</p>
+            <hr />
+        </section>
+        <section class="govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">Building an incredible UX team</h2>
+            <span class="govuk-caption-m"><a href="#">Maz Cook</a> | March 4, 2019</span>
+            <img class="govuk-!-margin-top-4 govuk-!-margin-bottom-4" src="/public/images/3by2.jpg" width="100%">
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id molestie metus, quis facilisis ante. Pellentesque lobortis velit non lectus congue ornare. Nam pellentesque urna nec consequat placerat. Fusce tempus enim dignissim blandit rutrum. Mauris gravida nisl sit amet neque rutrum, vitae convallis eros elementum. Integer bibendum dapibus nisl eu porta. Fusce nec tellus at eros cursus pellentesque. Donec ac nunc felis. Aenean auctor eros mauris, non iaculis ex molestie id. Vivamus ex metus, euismod ac interdum sit amet, maximus a nibh. Curabitur consectetur id odio id facilisis.</p>
+        </section>
+
+    </div>
+</div>
+
+{% endblock %}

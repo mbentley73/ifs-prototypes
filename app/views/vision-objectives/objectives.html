@@ -6,25 +6,22 @@
 IFS Prototypes
 {% endblock %}
 
-{% set prototypesActive = true %}
+{% set visionObjectivesActive = true %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-        <h2 class="govuk-heading-s">2019</h2>
         {{ subNavigation.nav([
-        {name: 'Mar', url: '/prototypes/2019/march', currentPage: false},
-        {name: 'Apr', url: '/prototypes/2019/april', currentPage: false},
-        {name: 'May', url: '/prototypes/2019/may', currentPage: false}
+        {name: 'Vision', url: 'vision', currentPage: false},
+        {name: 'Objectives', url: 'objectives', currentPage: true},
+        {name: 'Project principles', url: 'project-principles', currentPage: false}
         ]) }}
     </div>
     <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">
-            Prototypes
+            Objectives
         </h1>
-
-        <p class="govuk-body">Information about prototypes</p>
     </div>
 </div>
 

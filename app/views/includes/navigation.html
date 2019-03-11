@@ -4,31 +4,41 @@
   <ul class="ifs-navigation__list govuk-width-container">
     {% if currentSection == 'get-started' %}
     <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/">Get started</a>
+      <a class="govuk-link" href="/pattern-library">Get started</a>
     </li>
     {% else %}
     <li>
-      <a class="govuk-link" href="/">Get started</a>
+      <a class="govuk-link" href="/pattern-library">Get started</a>
     </li>
     {% endif %}
 
-    {% if currentSection == 'component' %}
+    {% if currentSection == 'styles' %}
     <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/components">Components</a>
+      <a class="govuk-link" href="/pattern-library/styles">Styles</a>
     </li>
     {% else %}
     <li>
-      <a class="govuk-link" href="/components">Components</a>
+      <a class="govuk-link" href="/pattern-library/styles">Styles</a>
     </li>
     {% endif %}
 
-    {% if currentSection == 'prototype' %}
+    {% if currentSection == 'components' %}
     <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/prototypes">Prototypes</a>
+      <a class="govuk-link" href="/pattern-library/components">Components</a>
     </li>
     {% else %}
     <li>
-      <a class="govuk-link" href="/prototypes">Prototypes</a>
+      <a class="govuk-link" href="/pattern-library/components">Components</a>
+    </li>
+    {% endif %}
+
+    {% if currentSection == 'patterns' %}
+    <li class="ifs-navigation--current-page">
+      <a class="govuk-link" href="/pattern-library/patterns">Patterns</a>
+    </li>
+    {% else %}
+    <li>
+      <a class="govuk-link" href="/pattern-library/patterns">Patterns</a>
     </li>
     {% endif %}
 

@@ -1,0 +1,35 @@
+{% macro nav(items) %}
+<nav class="ifs-sub-navigation">
+    <ul class="ifs-sub-navigation__section">
+        {% for item in items %}
+        {% if item.currentPage %}
+            {% set currentPageClass = 'ifs-sub-navigation__section-item--current' %}
+        {% else %}
+            {% set currentPageClass = '' %}
+        {% endif %}
+        <li class="ifs-sub-navigation__section-item {{ currentPageClass }}">
+            <a class="ifs-sub-navigation__link govuk-link" href="{{ item.url }}">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+
+        <!--{% if currentPage == 'autocomplete' %}-->
+        <!--<li class="ifs-sub-navigation__section-item ifs-sub-navigation__section-item&#45;&#45;current">-->
+            <!--<a class="ifs-sub-navigation__link govuk-link" href="/components/autocomplete">Autocomplete</a>-->
+        <!--</li>-->
+        <!--{% else %}-->
+        <!--<li class="ifs-sub-navigation__section-item">-->
+            <!--<a class="ifs-sub-navigation__link govuk-link" href="/components/autocomplete">Autocomplete</a>-->
+        <!--</li>-->
+        <!--{% endif %}-->
+        <!--<li class="ifs-sub-navigation__section-item">-->
+            <!--<a class="ifs-sub-navigation__link govuk-link" href="/components/autocomplete">Item</a>-->
+        <!--</li>-->
+        <!--<li class="ifs-sub-navigation__section-item">-->
+            <!--<a class="ifs-sub-navigation__link govuk-link" href="/components/autocomplete">Item</a>-->
+        <!--</li>-->
+        <!--<li class="ifs-sub-navigation__section-item">-->
+            <!--<a class="ifs-sub-navigation__link govuk-link" href="/components/autocomplete">Item</a>-->
+        <!--</li>-->
+    </ul>
+</nav>
+{% endmacro %}

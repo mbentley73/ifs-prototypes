@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+{% import "components/sub-navigation.html" as subNavigation %}
+
+{% block pageTitle %}
+  Progress list
+{% endblock %}
+
+{% set patternLibraryActive = true %}
+{% set showNavigation = true %}
+{% set currentSection = "components" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+            {name: 'Autocomplete', url: '/pattern-library/components/autocomplete', currentPage: false},
+            {name: 'Progress list', url: '/pattern-library/components/progress-list', currentPage: true},
+            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: false}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Progress list
+        </h1>
+
+        <hr class="govuk-!-margin-bottom-6" />
+
+        <p class="govuk-body">XXX</p>
+
+        <h2 class="govuk-heading-m">Before using it</h2>
+        <p class="govuk-body">XXX</p>
+        <h2 class="govuk-heading-m">When using it</h2>
+        <p class="govuk-body">XXX</p>
+
+        <div class="example">
+            <div class="example-component">
+
+            </div>
+            <ul class="example-tab--navigation">
+                <li>
+                    <a href="#" class="govuk-link" id="html">HTML</a>
+                </li>
+                <li>
+                    <a href="#" class="govuk-link" id="notes">Notes</a>
+                </li>
+            </ul>
+            <div class="example-tab" id="html-tab">
+                <pre>
+                    <code class="html">
+
+                    </code>
+                </pre>
+            </div>
+            <div class="example-tab" id="notes-tab">
+                <p class="govuk-body">Add notes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

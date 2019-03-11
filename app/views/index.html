@@ -1,35 +1,36 @@
 
 {% extends "layout.html" %}
+{% import "components/cards.html" as cards %}
 
 {% block pageTitle %}
   IFS Prototypes and components library
 {% endblock %}
 
-{% set currentSection = "get-started" %}
-
 {% block content %}
 
+<h1 class="govuk-heading-xl">
+    IFS Digital
+</h1>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-quarter">
-        &nbsp;
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Pattern library', 'A library of visual and interaction patterns for IFS interfaces.', '/pattern-library') }}
     </div>
-    <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-xl">
-            IFS Prototypes and component library
-        </h1>
-
-        <p class="govuk-body">Add intro here</p>
-
-        <h2 class="govuk-heading-m">Getting started with prototyping</h2>
-
-        <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-            <li>
-                <a href="https://design-system.service.gov.uk">
-                    GOV.UK Design System
-                </a>
-            </li>
-        </ul>
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Prototypes', 'Links and information on prototypes for testing.', '/prototypes') }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Sprint notes', 'A sprint-by-sprint list of what we are doing in IFS.', '/sprint-notes') }}
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Content guid', 'Content guide.', '/content-guide') }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Blog', 'What we are up to', '/blog') }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {{ cards.card('Vision and objectives', 'IFS principles and examples of how they have been used.', '/vision-objectives') }}
     </div>
 </div>
 

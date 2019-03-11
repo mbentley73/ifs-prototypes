@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+{% import "components/sub-navigation.html" as subNavigation %}
+
+{% block pageTitle %}
+  Autocomplete
+{% endblock %}
+
+{% set patternLibraryActive = true %}
+{% set showNavigation = true %}
+{% set currentSection = "component" %}
+{% set currentPage = "autocomplete" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+            {name: 'Autocomplete', url: '/pattern-library/components/autocomplete', currentPage: true},
+            {name: 'Progress list', url: '/pattern-library/components/progress-list', currentPage: false},
+            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: false}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Autocomplete
+        </h1>
+
+        {% include "includes/experimental.html" %}
+
+        <hr class="govuk-!-margin-bottom-6" />
+
+        <p class="govuk-body">Type-ahead can be used to assist users in selecting from a known set of options. It can
+            help constrain choices, where using a free-text field would produce to much variability in the user input.
+            It can be used as an alternative to select lists in some situations.</p>
+
+        <h2 class="govuk-heading-m">Before using it</h2>
+        <p class="govuk-body">Consider whether there are other ways of collecting the information. If 90% of users are
+            from the UK, you may decide to ask them if they are from the UK, and, only if they aren't, do you ask them
+            where they are from.</p>
+        <h2 class="govuk-heading-m">When using it</h2>
+        <p class="govuk-body">Us it where the user is likely to know the answer ahead of time ir their country of birth.</p>
+        <h2 class="govuk-heading-m">Constrained and unconstrained input</h2>
+        <p class="govuk-body">Where the user "must" select from a constrained list, they should be clear that they need
+            to make a selection.</p>
+        <p class="govuk-body">Where the user doesn't "have" to select from a constrained list, type-ahead can help
+            standardise inputs, whilst giving users the freedom to enter other choices. Eg familial relation - the
+            majority of people are 'mother / father / brother / sister', but users can choose to enter less common types.</p>
+
+        <div class="example">
+            <div class="example-component">
+                <form>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="location-picker">Select a country</label>
+                        <select class="govuk-select" id="location-picker" data-auto-complete="true">
+                            <option value="fr">France</option>
+                            <option value="de">Germany</option>
+                            <option value="gb">United Kingdom</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <ul class="example-tab--navigation">
+                <li>
+                    <a href="#" class="govuk-link" id="html">HTML</a>
+                </li>
+                <li>
+                    <a href="#" class="govuk-link" id="notes">Notes</a>
+                </li>
+            </ul>
+            <div class="example-tab" id="html-tab">
+                <pre>
+                    <code class="html">
+<div class="govuk-form-group">
+    <label class="govuk-label" for="location-picker">Select a country</label>
+    <select class="govuk-select" id="location-picker" data-auto-complete="true">
+        <option value="fr">France</option>
+        <option value="de">Germany</option>
+        <option value="gb">United Kingdom</option>
+    </select>
+</div>
+                    </code>
+                </pre>
+            </div>
+            <div class="example-tab" id="notes-tab">
+                <p class="govuk-body">Add notes here.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

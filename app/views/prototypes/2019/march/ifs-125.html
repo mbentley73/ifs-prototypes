@@ -3,7 +3,7 @@
 {% import "components/sub-navigation.html" as subNavigation %}
 
 {% block pageTitle %}
-IFS Prototypes
+  Autocomplete
 {% endblock %}
 
 {% set prototypesActive = true %}
@@ -12,20 +12,19 @@ IFS Prototypes
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-        <h2 class="govuk-heading-s">2019</h2>
         {{ subNavigation.nav([
-        {name: 'Mar', url: '/prototypes/2019/march', currentPage: false},
-        {name: 'Apr', url: '/prototypes/2019/april', currentPage: false},
-        {name: 'May', url: '/prototypes/2019/may', currentPage: false}
+            {name: 'IFS', url: 'ifs', currentPage: true},
+            {name: 'Horizon2020', url: 'h2020', currentPage: false},
+            {name: 'ACC', url: 'acc', currentPage: false}
         ]) }}
     </div>
     <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">
-            Prototypes
+            Sprint notes
         </h1>
 
-        <p class="govuk-body">Information about prototypes</p>
     </div>
 </div>
+
 
 {% endblock %}

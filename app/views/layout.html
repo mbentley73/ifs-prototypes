@@ -41,16 +41,50 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "/pattern-library",
+        text: "Pattern library",
+        active: patternLibraryActive
+      },
+      {
+        href: "/prototypes",
+        text: "Prototypes",
+        active: prototypesActive
+      },
+      {
+        href: "/sprint-notes/ifs",
+        text: "Sprint notes",
+        active: sprintNotesActive
+      },
+      {
+        href: "/content-guide",
+        text: "Content guide",
+        active: contentGuideActive
+      },
+      {
+        href: "/blog/2019",
+        text: "Blog",
+        active: blogActive
+      },
+      {
+        href: "/vision-objectives/vision",
+        text: "Vision and objectives",
+        active: visionObjectivesActive
+      }
+    ]
   }) }}
   {{ govukPhaseBanner({
     tag: {
-      text: "prototype"
-    },
+    text: "BETA"
+  },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
     classes: 'govuk-width-container'
   }) }}
-  {% include "includes/navigation.html" %}
+  {% if showNavigation %}
+    {%include "includes/navigation.html" %}
+  {% endif %}
 {% endblock %}
 
 {% if useAutoStoreData %}
