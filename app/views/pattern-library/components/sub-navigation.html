@@ -3,13 +3,13 @@
 {% import "includes/sub-navigation.html" as subNavigation %}
 
 {% block pageTitle %}
-  Task list
+  Autocomplete
 {% endblock %}
 
 {% set patternLibraryActive = true %}
 {% set showNavigation = true %}
 {% set componentsActive = true %}
-{% set currentPage = "task-list" %}
+{% set currentPage = "sub-navigation" %}
 
 {% block content %}
 
@@ -18,28 +18,25 @@
         {{ subNavigation.nav([
             {name: 'Autocomplete', url: '/pattern-library/components/autocomplete', currentPage: false},
             {name: 'Progress list', url: '/pattern-library/components/progress-list', currentPage: false},
-            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: true},
+            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: false},
             {name: 'Navigation', url: '/pattern-library/components/navigation', currentPage: false},
-            {name: 'Sub navigation', url: '/pattern-library/components/sub-navigation', currentPage: false}
+            {name: 'Sub navigation', url: '/pattern-library/components/sub-navigation', currentPage: true}
         ]) }}
     </div>
     <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">
-            Task list
+            Sub navigation
         </h1>
 
         <hr class="govuk-!-margin-bottom-6" />
 
-        <p class="govuk-body">XXX</p>
-
-        <h2 class="govuk-heading-m">Before using it</h2>
-        <p class="govuk-body">XXX</p>
-        <h2 class="govuk-heading-m">When using it</h2>
-        <p class="govuk-body">XXX</p>
-
         <div class="example">
             <div class="example-component">
-
+                {{ subNavigation.nav([
+                    {name: 'Item 1', url: '#', currentPage: true},
+                    {name: 'Item 2', url: '#', currentPage: false},
+                    {name: 'Item 3', url: '#', currentPage: false}
+                ]) }}
             </div>
             <ul class="example-tab--navigation">
                 <li>
@@ -52,7 +49,11 @@
             <div class="example-tab" id="html-tab">
                 <pre>
                     <code class="html">
-
+                        {{ subNavigation.nav([
+                            {name: 'Item 1', url: '#', currentPage: true},
+                            {name: 'Item 2', url: '#', currentPage: false},
+                            {name: 'Item 3', url: '#', currentPage: false}
+                        ]) }}
                     </code>
                 </pre>
             </div>
@@ -60,7 +61,9 @@
                 <p class="govuk-body">Add notes here.</p>
             </div>
         </div>
+
     </div>
 </div>
+
 
 {% endblock %}

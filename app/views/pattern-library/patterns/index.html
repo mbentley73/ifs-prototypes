@@ -1,12 +1,14 @@
 
 {% extends "layout.html" %}
-{% import "components/sub-navigation.html" as subNavigation %}
+{% import "includes/sub-navigation.html" as subNavigation %}
 
 {% block pageTitle %}
   Autocomplete
 {% endblock %}
 
 {% set patternLibraryActive = true %}
+{% set showNavigation = true %}
+{% set patternsActive = true %}
 
 {% block content %}
 

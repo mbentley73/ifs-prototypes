@@ -1,6 +1,6 @@
 
 {% extends "layout.html" %}
-{% import "components/sub-navigation.html" as subNavigation %}
+{% import "includes/sub-navigation.html" as subNavigation %}
 
 {% block pageTitle %}
   Progress list
@@ -8,7 +8,8 @@
 
 {% set patternLibraryActive = true %}
 {% set showNavigation = true %}
-{% set currentSection = "components" %}
+{% set componentsActive = true %}
+{% set currentPage = "progress-list" %}
 
 {% block content %}
 
@@ -17,7 +18,9 @@
         {{ subNavigation.nav([
             {name: 'Autocomplete', url: '/pattern-library/components/autocomplete', currentPage: false},
             {name: 'Progress list', url: '/pattern-library/components/progress-list', currentPage: true},
-            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: false}
+            {name: 'Task list', url: '/pattern-library/components/task-list', currentPage: false},
+        {name: 'Navigation', url: '/pattern-library/components/navigation', currentPage: false},
+            {name: 'Sub navigation', url: '/pattern-library/components/sub-navigation', currentPage: false}
         ]) }}
     </div>
     <div class="govuk-grid-column-three-quarters">

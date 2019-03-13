@@ -1,47 +1,9 @@
-
-
+{% macro nav(items) %}
 <nav class="ifs-navigation govuk-clearfix">
-  <ul class="ifs-navigation__list govuk-width-container">
-    {% if currentSection == 'get-started' %}
-    <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/pattern-library">Get started</a>
-    </li>
-    {% else %}
-    <li>
-      <a class="govuk-link" href="/pattern-library">Get started</a>
-    </li>
-    {% endif %}
-
-    {% if currentSection == 'styles' %}
-    <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/pattern-library/styles">Styles</a>
-    </li>
-    {% else %}
-    <li>
-      <a class="govuk-link" href="/pattern-library/styles">Styles</a>
-    </li>
-    {% endif %}
-
-    {% if currentSection == 'components' %}
-    <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/pattern-library/components">Components</a>
-    </li>
-    {% else %}
-    <li>
-      <a class="govuk-link" href="/pattern-library/components">Components</a>
-    </li>
-    {% endif %}
-
-    {% if currentSection == 'patterns' %}
-    <li class="ifs-navigation--current-page">
-      <a class="govuk-link" href="/pattern-library/patterns">Patterns</a>
-    </li>
-    {% else %}
-    <li>
-      <a class="govuk-link" href="/pattern-library/patterns">Patterns</a>
-    </li>
-    {% endif %}
-
-  </ul>
+    <ul class="ifs-navigation__list govuk-width-container">{% for item in items %} {% if item.currentSection %} {% set currentSectionClass = 'ifs-navigation--current-page' %} {% else %} {% set currentSectionClass = '' %} {% endif %}
+        <li class="{{ currentSectionClass }}">
+            <a class="govuk-link" href="{{ item.url }}">{{ item.name }}</a>
+        </li>{% endfor %}
+    </ul>
 </nav>
-
+{% endmacro %}

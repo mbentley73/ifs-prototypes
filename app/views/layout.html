@@ -25,6 +25,7 @@
 {% from "tag/macro.njk"              import govukTag %}
 {% from "textarea/macro.njk"         import govukTextarea %}
 {% from "warning-text/macro.njk"     import govukWarningText %}
+{% import "includes/navigation.html" as navigation %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -83,7 +84,12 @@
     classes: 'govuk-width-container'
   }) }}
   {% if showNavigation %}
-    {%include "includes/navigation.html" %}
+    {{ navigation.nav([
+      {name: 'Get started', url: '/pattern-library', currentSection: getStartedActive},
+      {name: 'Styles', url: '/pattern-library/styles', currentSection: stylesActive},
+      {name: 'Components', url: '/pattern-library/components', currentSection: componentsActive},
+      {name: 'Patterns', url: '/pattern-library/patterns', currentSection: patternsActive}
+    ]) }}
   {% endif %}
 {% endblock %}
 
