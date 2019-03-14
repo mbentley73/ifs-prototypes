@@ -1,0 +1,221 @@
+@import "../layout/grid";
+
+//Competition management admin pages require extra page width to prevent admin data tables from horizontal scrolling
+.competition-management{
+  @extend %wide-page;
+}
+
+.govuk-grid-row {
+  &.sort-by {
+    border-bottom:1px solid $govuk-secondary-text-colour;
+    padding: 30px 0 5px;
+    margin: 0 0 5px;
+
+    > [class^="column"] {
+      padding:0;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+  }
+}
+
+.info-area {
+  > p > span {
+    display: block;
+  }
+
+  &.bottom {
+    position: absolute;
+  }
+
+  &.sticky {
+    position: fixed;
+    top:0;
+  }
+}
+
+.competition-management {
+  table + .pagination {
+    border-top:none;
+    margin-top:0;
+    margin-bottom:0;
+  }
+}
+
+.js-enabled {
+  #save-funding-decision {
+    display:none;
+  }
+}
+
+@media (min-width: 1200px){
+  .info-area {
+    .govuk-button,
+    .button-secondary {
+      display:block;
+    }
+  }
+}
+
+@media(max-width: 1200px){
+  .competition-data {
+    .column-fifth,
+    .column-four-fifth {
+      float:none;
+      width:100%;
+    }
+  }
+
+  .info-area {
+    overflow:hidden;
+    margin-bottom:30px;
+
+    > p {
+      &:first-child {
+        clear:both;
+        width:100%;
+      }
+    }
+
+    > p + p {
+      padding-right: 1%;
+      width:24%;
+      float:left;
+      word-wrap:break-word;
+    }
+  }
+}
+
+.button-dashboard{
+  background: govuk-colour("grey-4");
+  padding: 20px 20px 15px 20px;
+  display: block;
+  min-height: 110px;
+  text-decoration: none;
+
+  &:hover{
+    background: govuk-colour("grey-4");
+  }
+
+  &.highlight{
+    background: $govuk-button-colour;
+    color: white;
+  }
+}
+
+.milestones-table {
+  thead {
+    th {
+      width: 10%;
+
+      &#milestone {
+        width: 40%;
+      }
+    }
+  }
+}
+
+.funder-row {
+  button {
+    &.remove-funder {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.guidance-row {
+  button {
+    &.remove-guidance-row {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.application-question-list {
+  dt,
+  dd {
+    margin-bottom: 15px;
+    min-height: 25px;
+  }
+
+  .dt-title {
+    @include govuk-font(24);
+  }
+}
+
+.competition-setup {
+  select {
+    &[disabled] {
+      background:  govuk-colour("grey-4");
+      border: 1px solid $govuk-border-colour;
+      color: govuk-colour("black");
+    }
+  }
+}
+
+[id="guidance-table"] {
+  td {
+    vertical-align:top;
+
+    textarea {
+      margin:0 !important; //strange bug where resizing sets a big margin in FF
+    }
+  }
+}
+
+.contentGroup {
+  @include govuk-clearfix;
+  padding: 30px 0;
+  border-top: 1px solid $govuk-border-colour;
+  clear:both;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+}
+
+.select-all {
+  padding-top: 12px;
+
+  .govuk-checkboxes {
+    float: left;
+  }
+
+  .govuk-hint {
+    @include media-down(mobile) {
+      display: block;
+      text-align: center;
+    }
+
+    display:inline-block;
+    text-align: left;
+    margin: 8px 10px 0;
+  }
+}
+
+.mark-applications {
+  padding:10px 0;
+  text-align:right;
+
+  h3 {
+    display: inline-block;
+    font-weight: bold;
+    margin: 8px 18px 0 0;
+  }
+
+  button {
+    margin: 0 0 10px;
+  }
+}
