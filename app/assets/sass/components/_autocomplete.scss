@@ -110,8 +110,8 @@
 
 .autocomplete__option--focused,
 .autocomplete__option:hover {
-  background-color: #005EA5;
-  border-color: #005EA5;
+  background-color: $govuk-link-colour;
+  border-color: $govuk-link-colour;
   color: white;
   outline: none;
 }
