@@ -1,0 +1,51 @@
+
+{% extends "prototype-layout.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% import "includes/sub-navigation.html" as subNavigation %}
+{% import "includes/message-alert.html" as messageAlert %}
+
+{% set bodyClasses = "competition-management" %}
+
+{% block pageTitle %}
+      Assessor invites journey
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        href: "#",
+        text: "Back"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+        <span class="govuk-caption-xl">5649 | Machine learning for transport infrastructure | Open</span>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {{ subNavigation.nav([
+            {name: 'Competition management', url: '#', currentPage: true, active: true},
+            {name: 'Manage assessor allocations', url: '#', currentPage: false, active: true},
+            {name: 'Manage assessments', url: '#', currentPage: false, active: true},
+            {name: 'Manage assessment panel', url: '#', currentPage: false, active: false},
+            {name: 'Manage interview panel', url: '#', currentPage: false, active: false},
+            {name: 'Set funding decision', url: '#', currentPage: false, active: false},
+            {name: 'Manage event dates', url: '#', currentPage: false, active: true},
+            {name: 'Competition settings', url: '#', currentPage: false, active: true}
+        ]) }}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">
+            Competition overview
+        </h1>
+        {{ messageAlert.message({heading: '', body: 'Assessors are available for assignment, ', linkText: 'assign applications', linkUrl: '#'}) }}
+    </div>
+</div>
+
+
+
+
+{% endblock %}

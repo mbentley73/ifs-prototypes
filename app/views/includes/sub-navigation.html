@@ -1,8 +1,9 @@
 {% macro nav(items) %}
 <nav class="ifs-sub-navigation">
     <ul class="ifs-sub-navigation__section">{% for item in items %}{% if item.currentPage %}{% set currentPageClass = 'ifs-sub-navigation__section-item--current' %} {% else %} {% set currentPageClass = '' %} {% endif %}
-        <li class="ifs-sub-navigation__section-item {{ currentPageClass }}">
-            <a class="ifs-sub-navigation__link govuk-link" href="{{ item.url }}">{{ item.name }}</a>
+        <li class="ifs-sub-navigation__section-item {{ currentPageClass }}">{% if item.active %}
+            <a class="ifs-sub-navigation__link govuk-link" href="{{ item.url }}">{{ item.name }}</a>{% else %}
+            <span>{{ item.name }}</span>{% endif %}
         </li>{% endfor %}
     </ul>
 </nav>

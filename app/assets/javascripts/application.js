@@ -10,8 +10,15 @@ $(document).ready(function () {
 
   var autoCompleteElement = $('[data-auto-complete]')
   if (autoCompleteElement.length > 0) {
+    var showAllValues
+    if (autoCompleteElement.children('option').length <= 20) {
+      showAllValues = true
+    } else {
+      showAllValues = false
+    }
     accessibleAutocomplete.enhanceSelectElement({
-      selectElement: autoCompleteElement[0]
+      selectElement: autoCompleteElement[0],
+      showAllValues: showAllValues
     })
   }
 

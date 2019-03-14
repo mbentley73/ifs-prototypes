@@ -17,10 +17,12 @@
 .autocomplete__input {
   background-color: transparent;
   position: relative;
+  padding-left: 2px;
+  padding-top: 2px;
 }
 
 .autocomplete__hint {
-  color: #BFC1C3;
+  color: $govuk-border-colour !important;
   position: absolute;
 }
 
@@ -30,7 +32,7 @@
 
 .autocomplete__input--focused {
   outline-offset: 0;
-  outline: 3px solid #ffbf47;
+  outline: 3px solid $govuk-focus-colour;
 }
 
 .autocomplete__input--show-all-values {
@@ -50,7 +52,7 @@
 
 .autocomplete__menu {
   background-color: #fff;
-  border: 2px solid #0B0C0C;
+  border: 2px solid $govuk-input-border-colour;
   border-top: 0;
   color: #34384B;
   margin: 0;
@@ -82,7 +84,7 @@
 }
 
 .autocomplete__option {
-  border-bottom: solid #BFC1C3;
+  border-bottom: solid $govuk-border-colour;
   border-width: 1px 0;
   cursor: pointer;
   display: block;
@@ -115,8 +117,8 @@
 }
 
 .autocomplete__option--no-results {
-  background-color: #FAFAFA;
-  color: #646b6f;
+  background-color: $govuk-link-colour;
+  color: $govuk-link-colour;
   cursor: not-allowed;
 }
 
