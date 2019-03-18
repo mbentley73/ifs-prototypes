@@ -18,7 +18,9 @@ $(document).ready(function () {
     }
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: autoCompleteElement[0],
-      showAllValues: showAllValues
+      showAllValues: showAllValues,
+      defaultValue: '',
+      confirmOnBlur: false
     })
   }
 
