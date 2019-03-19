@@ -1,5 +1,5 @@
-{% macro message(heading, body, url, linkText, linkUrl) %}
-<div class="message-alert">
-    <p class="govuk-body">{{ message.body }}</p>
+{% macro message(item) %}
+<div class="message-alert govuk-!-margin-bottom-6">
+    <p class="govuk-body">{{ item.body }} <a href="{{ item.linkUrl }}">{{ item.linkText }}</a></p>
 </div>
 {% endmacro %}

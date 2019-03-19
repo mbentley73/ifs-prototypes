@@ -3,6 +3,7 @@
 {% from "back-link/macro.njk" import govukBackLink %}
 {% import "includes/sub-navigation.html" as subNavigation %}
 {% import "includes/message-alert.html" as messageAlert %}
+{% import "includes/information-panel.html" as informationPanel %}
 
 {% set bodyClasses = "competition-management" %}
 
@@ -42,6 +43,8 @@
             Competition overview
         </h1>
         {{ messageAlert.message({heading: '', body: 'Assessors are available for assignment, ', linkText: 'assign applications', linkUrl: '#'}) }}
+
+        {{ informationPanel.panel() }}
     </div>
 </div>
 

@@ -32,7 +32,7 @@
 
 .success-alert {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-tick.png');
+  background-image: url('/public/images/ifs-images/icons/icon-tick.png');
   background-size: 20px 17px;
   border-color: $govuk-button-colour;
 
@@ -44,14 +44,14 @@
 
 .fail-alert {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-cross.png');
+  background-image: url('/public/images/ifs-images/icons/icon-cross.png');
   color: $govuk-error-colour;
   border-color: $govuk-error-colour;
 }
 
 .warning-alert {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-alert.png');
+  background-image: url('/public/images/ifs-images/icons/icon-alert.png');
   color: $govuk-error-colour;
   border-color: $govuk-error-colour;
 
@@ -72,13 +72,13 @@
 .message-alert,
 .icon-info {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-info.png');
+  background-image: url('/public/images/ifs-images/icons/icon-info.png');
   border-color: $govuk-link-colour;
 }
 
 .assign-alert {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-edit.png');
+  background-image: url('/public/images/ifs-images/icons/icon-edit.png');
   border-color: $govuk-text-colour;
 }
 
@@ -90,6 +90,6 @@
 
 .declare-alert {
   @extend %alert-panel;
-  background-image: url('../images/ifs-images/icons/icon-declare.png');
+  background-image: url('/public/images/ifs-images/icons/icon-declare.png');
   border-color: $govuk-text-colour;
 }
