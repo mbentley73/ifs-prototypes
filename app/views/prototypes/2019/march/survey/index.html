@@ -1,0 +1,115 @@
+
+{% extends "prototype-layout.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% import "includes/sub-navigation.html" as subNavigation %}
+{% import "includes/message-alert.html" as messageAlert %}
+
+
+
+<main class="govuk-main-wrapper" id="main-content" role="main" style="
+    width: 960px;">
+
+{% block pageTitle %}
+      survey
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        href: "#",
+        text: "Back"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+
+        
+            
+    <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Application with ineligible</span>
+        Application status
+        
+    </h1>
+
+        
+
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9">
+            <h2 class="govuk-panel__title">Application submitted</h2>
+            <div class="govuk-panel__body govuk-!-font-size-19">
+                Application number: <span>62</span><br>
+                Your application for the competition '<span>Sustainable living models for the future</span>' was submitted
+                
+                    on
+                    26 Feb 2019
+                    at
+                    9:49am.
+                <br>
+                <div class="govuk-!-margin-top-6">
+                    <a href="/application/62/summary" class="govuk-link govuk-!-margin-right-6" style="color: white">View application</a>
+                    <a href="/application/62/print" class="govuk-link" style="color: white">Print application</a>
+                </div>
+            </div>
+        </div>
+        <h2 class="govuk-heading-l">What happens next?</h2>
+
+        
+            
+                <h3 class="govuk-heading-m">Assessment process</h3>
+                <p class="govuk-body">Once the competition submission deadline is reached your application will be sent for assessment. This is subject to eligibility. The assessment process follows these steps:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>eligible applications will be assessed independently by expert assessors</li>
+                    <li>each application is assessed by up to 5 assessors and against the same set criteria</li>
+                    <li>the assessor will score each question and provide feedback to justify those scores</li>
+                    <li>a panel process is held to moderate and ratify the outcome of the decision</li>
+                </ul>
+
+                <h3 class="govuk-heading-m">Decision notification</h3>
+                <p class="govuk-body">You and your project partners will be emailed notification of the decision by
+                    <strong>17 Jun 2021</strong>.
+                </p>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-heading-m">If your application is successful</h3>
+                        <p class="govuk-body">If you are successful with this application you
+                            will be asked to set up your project. The Project Manager and finance contacts for each organisation in your project will be asked for further information including:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>project location</li>
+                            <li>your organisation’s bank (BACS) details</li>
+                            <li>a profile of your project spend</li>
+                            <li>collaboration agreement (collaborative projects only)</li>
+                            <li>exploitation plan</li>
+                        </ul>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-heading-m">If your application is unsuccessful</h3>
+                        <p class="govuk-body">If you are unsuccessful with your application, you will be able to view the feedback from the assessors.</p>
+                        <p class="govuk-body">Sometimes your application will have scored well and will receive positive comments from the assessors. The average score however, will not be above the funding threshold for the competition.</p>
+                    </div>
+                </div>
+
+                <h3 class="govuk-heading-m">Application feedback</h3>
+                <p class="govuk-body">Application feedback will be provided by
+                    <strong>27 Jun 2021</strong>.
+                    <br>We will email you when this becomes available.
+                </p>
+            
+            
+   <h3 class="govuk-heading-m">Complete a short survey</h3>
+            <p class="govuk-body">It takes about 1 minute. Your answers will help improve the service.
+            </p>
+
+    <div class="govuk-!-margin-top-6">
+        <a href="/survey/10/feedback" class="govuk-button">Complete survey</a>
+    </div>
+
+        
+    <p class="govuk-body govuk-!-margin-top-9 user-feedback"><span class="govuk-!-font-weight-bold">Need help with this service?</span> <a class="govuk-link" href="/info/contact">Contact us</a></p>
+
+    </main>
+
+
+
+
+{% endblock %}

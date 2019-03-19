@@ -1,0 +1,151 @@
+
+{% extends "prototype-layout.html" %}
+{% from "back-link/macro.njk" import govukBackLink %}
+{% import "includes/sub-navigation.html" as subNavigation %}
+{% import "includes/message-alert.html" as messageAlert %}
+
+
+
+<main class="govuk-main-wrapper" id="main-content" role="main" style="
+    width: 960px;">
+
+{% block pageTitle %}
+      Funding information
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        href: "#",
+        text: "Competition setup"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+
+        
+            
+    <h1 class="govuk-heading-xl">
+        
+        Funding information
+        
+    </h1>
+
+        
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+    
+<div class="govuk-form-group">
+    <label class="govuk-label" for="location-picker"><b>Search for a funder</b></label>
+    <select class="govuk-select" id="location-picker" data-auto-complete="true">
+<option value="Smart Open">Smart Open</option>
+<option value="ISCF">Industrial Strategy Challenge Fund (ISCF)</option>
+<option value="Innovate">Innovate UK core budget</option>
+<option value="SBRI">Small Business Research Initiative (SBRI)</option>
+<option value="International">International</option>
+<option value="European">European: Eureka, Eurostars and other EU</option>
+<option value="ATI">Aerospace Technology Institute (ATI)</option>
+<option value="APC">Advanced Propulsion Centre (APC)</option>
+<option value="CCAV">Centre for Connected and Autonomous Vehicles (CCAV)</option>
+<option value="IDP">Integrated Delivery Platform (IDP)</option>
+<option value="Other delivery partners">Other delivery partners</option>
+<option value="BEIS">Department for Business, Energy and Industrial Strategy (BEIS)</option>
+<option value="OLS">Office for Life Sciences (OLS)</option>
+<option value="DCMS">Department for Digital, Culture, Media and Sport (DCMS)</option>
+<option value="Other stakeholders">Other stakeholders</option>
+    </select>
+</div>
+          
+          <button type="submit" disabled="disabled" class="govuk-button">
+  Add funder
+</button>
+          
+         
+
+          <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header width-150" scope="col">Name</th>
+                                <th class="govuk-table__header" scope="col">Budget</th>
+                                <th class="govuk-table__header" scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Name of funder</td>
+                                <td class="govuk-table__cell"><div class="govuk-form-group" style=" 
+    margin-bottom: 0px;">
+  <input class="govuk-input" id="event-name" name="event-name" type="text" style="
+    width: 164px;
+">
+</div></td>
+                          
+                            <td class="govuk-table__cell" style="text-align: right"><a href="" class="govuk-link">Remove</a></td>
+                                
+                                
+                        </tbody>
+              
+              
+                    </table>
+        
+            
+                
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-9">
+        
+       Total budget: £100,000,000
+        
+</h2>
+    
+           <h3 class="govuk-heading-m">
+        
+        Reporting fields
+        
+</h3>  
+            
+            
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="one-quarter">
+      <b>PAF number</b>
+  </label>
+  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+</div>
+          
+            <div class="govuk-form-group">
+  <label class="govuk-label" for="one-quarter">
+      <b>Budget code</b>
+  </label>
+  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+</div>
+         
+                 <div class="govuk-form-group">
+  <label class="govuk-label" for="one-quarter">
+      <b>Activity code</b>
+  </label>
+  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+</div>
+      
+          
+          <button type="submit" class="govuk-button">
+  Save and return
+</button>
+          
+         <p> <a class="govuk-link" href="">Return to competition setup</a></p>
+
+          
+
+ 
+
+
+        
+    <p class="govuk-body govuk-!-margin-top-9 user-feedback"><span class="govuk-!-font-weight-bold">Need help with this service?</span> <a class="govuk-link" href="/info/contact">Contact us</a></p>
+
+          
+      
+    </main>
+
+
+
+
+{% endblock %}
