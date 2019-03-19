@@ -1,0 +1,10 @@
+{% macro panel(topic, number, numberTwo) %}
+<div class="highlight-panel highlight-panel-padded">
+    <small>{{ topic }}</small>
+    <span class="govuk-heading-l govuk-!-margin-bottom-0">
+        {{ number }}
+        {% if numberTwo %} <span class="govuk-!-font-size-19">of</span> {{ numberTwo }} {% endif %}
+    </span>
+
+</div>
+{% endmacro %}

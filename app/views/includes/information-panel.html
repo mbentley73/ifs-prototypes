@@ -1,29 +1,34 @@
 {% macro panel(item) %}
 <div class="information-panel govuk-!-margin-bottom-6">
-    <h2 class="govuk-heading-m govuk-!-margin-top-0">Competition information</h2>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <dl class="govuk-list">
+                <dt>Competition number</dt>
+                <dd>Programme</dd>
 
-    <dl class="standard-definition-list">
-        <dt>Competition type</dt>
-        <dd>Programme</dd>
+                <dt>Competition type</dt>
+                <dd>Programme</dd>
 
-        <dt>Innovation sector</dt>
-        <dd>Materials and manufacturing</dd>
+                <dt>Innovation sector</dt>
+                <dd>Materials and manufacturing</dd>
 
-        <dt>Innovation area</dt>
-        <dd>Digital manufacturing</dd>
+                <dt>Innovation area</dt>
+                <dd>Digital manufacturing</dd>
+            </dl>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <dl class="govuk-list">
+                <dt>Funding available</dt>
+                <dd>£115,000</dd>
 
-        <dt>Funding available</dt>
-        <dd>£115,000</dd>
+                <dt>Innovation Lead</dt>
+                <dd>Ian Cooper</dd>
 
-        <dt>Innovation Lead</dt>
-        <dd>Ian Cooper</dd>
+                <dt>Portfolio Manager</dt>
+                <dd>John Doe</dd>
+            </dl>
+        </div>
+    </div>
 
-        <dt>Portfolio Manager</dt>
-        <dd>John Doe</dd>
-    </dl>
-
-    <p class="govuk-body">
-        <a href="#" class="govuk-link">View and update competition setup</a>
-    </p>
 </div>
 {% endmacro %}

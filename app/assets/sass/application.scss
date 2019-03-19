@@ -73,6 +73,7 @@ $wide-page-width: 1380px;
 
 // IFS layout
 @import "layout/grid";
+@import "layout/small";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "components/autocomplete";
@@ -81,7 +82,12 @@ $wide-page-width: 1380px;
 @import "components/example";
 @import "components/message-alerts";
 @import "components/information-panel";
+@import "components/highlight-panel";
 @import "components/list-overview";
+@import "components/statusses";
+@import "components/boxed-list";
+@import "components/progress-list";
+@import "components/milestones-list";
 
 // Page specific styling
 @import "pages/competition-management";

@@ -4,18 +4,19 @@
 {% import "includes/sub-navigation.html" as subNavigation %}
 {% import "includes/message-alert.html" as messageAlert %}
 {% import "includes/information-panel.html" as informationPanel %}
+{% import "includes/highlight-panel.html" as highlightPanel %}
 
 {% set bodyClasses = "competition-management" %}
 
 {% block pageTitle %}
-      Assessor invites journey
+Assessor invites journey
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        href: "#",
-        text: "Back"
-    }) }}
+{{ govukBackLink({
+href: "#",
+text: "Back"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -42,9 +43,112 @@
         <h1 class="govuk-heading-xl">
             Competition overview
         </h1>
-        {{ messageAlert.message({heading: '', body: 'Assessors are available for assignment, ', linkText: 'assign applications', linkUrl: '#'}) }}
+        {{ messageAlert.message('', 'Assessors are available for assignment, ', 'assign applications', '#') }}
 
         {{ informationPanel.panel() }}
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+                {{ highlightPanel.panel('Assessors accepted vs invited', '21', '25') }}
+            </div>
+            <div class="govuk-grid-column-one-third">
+                {{ highlightPanel.panel('Applications beyond 50%', '21') }}
+            </div>
+            <div class="govuk-grid-column-one-third">
+                {{ highlightPanel.panel('Applications per assessor', '5') }}
+            </div>
+        </div>
+        <h2 class="govuk-heading-m">Competition milestones</h2>
+        <ul class="govuk-list milestones-list">
+            <li>
+                <div class="milestone">
+                    <strong class="name">Open date</strong>
+                    <span class="date">6 July 2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="milestone">
+                    <strong class="name">Briefing event</strong>
+                    <span class="date">16 July 2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="milestone">
+                    <strong class="name">Submission date</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="milestone">
+                    <a href="#" class="name">Allocate assessors</a>
+                    <span class="date">5 July 2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="milestone">
+                    <strong class="name">Assessor briefing</strong>
+                    <span class="date">15 July 2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="milestone">
+                    <strong class="name">Assessor deadline</strong>
+                    <span class="date">16 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-highlighted">
+                <div class="milestone">
+                    <a href="#" class="name">Allocate applications</a>
+                    <span class="date">26 July 2016</span>
+                    <span class="information">Assessor allocation is now open for action.</span>
+                </div>
+                <strong class="status govuk-tag">
+                    Milestone open
+                </strong>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Line draw</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Assessment panel</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Panel date</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Funders panel</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Notifications</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Award applications</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+            <li class="milestone-inactive">
+                <div class="milestone">
+                    <strong class="name">Release feedback</strong>
+                    <span class="date">26 July 2016</span>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
 

@@ -1,0 +1,28 @@
+.highlight-panel {
+  background: $govuk-brand-colour;
+  color: govuk-colour("white");
+  padding: 20px 0;
+  margin-bottom: 20px;
+
+  &-padded {
+    @include media-down(mobile) {
+      margin-bottom: 15px;
+      min-height: auto;
+    }
+
+    box-sizing: border-box;
+    line-height: 1.1em;
+    min-height: 80px;
+    padding: govuk-spacing(2);
+  }
+
+  small,
+  .govuk-heading-l,
+  span {
+    color: govuk-colour("white");
+  }
+
+  .govuk-heading-l {
+    margin-top: 5px;
+  }
+}
