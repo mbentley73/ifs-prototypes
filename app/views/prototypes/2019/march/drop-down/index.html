@@ -22,7 +22,7 @@ text: "Competition setup"
     <h1 class="govuk-heading-xl">Funding information</h1>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <div class="govuk-form-group">
+            <div class="govuk-form-group" id="prototype-form-group">
                 <label class="govuk-label govuk-label-s" for="prototype-funders">Search for a funder</label>
                 <select class="govuk-select" id="prototype-funders" data-auto-complete="true">
                     <option value="Advanced Propulsion Centre (APC)">Advanced Propulsion Centre (APC)</option>
@@ -43,7 +43,7 @@ text: "Competition setup"
                 </select>
             </div>
             <div class="govuk-form-group">
-                <button id="add-funder" type="submit" disabled="disabled" class="govuk-button" data-auto-complete-submit="">
+                <button id="add-funder" type="submit" class="govuk-button">
                     Add funder
                 </button>
             </div>
@@ -100,23 +100,36 @@ text: "Competition setup"
         var total = 0;
         $('#add-funder').on('click', function () {
           var funderName = $('#prototype-funders').val()
-          $('tbody').prepend('<tr class="govuk-table__row">\n' +
-                '<td class="govuk-table__cell">' + funderName + '</td>\n' +
-                '<td class="govuk-table__cell">\n' +
-                    '<input class="prototype-input govuk-input govuk-input--width-10" type="text">\n' +
-                '</td>\n' +
-                '<td class="govuk-table__cell govuk-table__cell--numeric">\n' +
-                    '<a href="#" class="govuk-link prototype-remove">Remove</a>\n' +
-                '</td>\n' +
-            '</tr>')
-          $('[data-auto-complete-submit]').prop('disabled', true)
-          $('#prototype-funders').val('')
-          var tableLength = $('table tbody tr').length
-          if (tableLength > 0) {
-            $('[data-auto-complete-submit]').text('Add co-funder')
+          if (funderName !== '') {
+            $('tbody').append('<tr class="govuk-table__row">\n' +
+              '<td class="govuk-table__cell">' + funderName + '</td>\n' +
+              '<td class="govuk-table__cell">\n' +
+              '<input tabindex="0" class="prototype-input govuk-input govuk-input--width-10" type="text">\n' +
+              '</td>\n' +
+              '<td class="govuk-table__cell govuk-table__cell--numeric">\n' +
+              '<a href="#" class="govuk-link prototype-remove">Remove</a>\n' +
+              '</td>\n' +
+              '</tr>')
+            $('[data-auto-complete-submit]').prop('disabled', true)
+            $('#prototype-funders').val('')
+            var tableLength = $('table tbody tr').length
+            if (tableLength > 0) {
+              $('[data-auto-complete-submit]').text('Add co-funder')
+            } else {
+              $('[data-auto-complete-submit]').text('Add funder')
+            }
+            setTimeout(function ()
+            {
+              $('tbody tr:last').find('input').focus()
+            }, 200);
           } else {
-            $('[data-auto-complete-submit]').text('Add funder')
+            $('#prototype-form-group').addClass('govuk-form-group--error')
+            $('#prototype-form-group').prepend('<span class="govuk-error-message">Select funder</span>')
           }
+        })
+        $('body').on('click', '#prototype-funders', function () {
+          $('#prototype-form-group').removeClass('govuk-form-group--error')
+          $('#prototype-form-group').find('.govuk-error-message').remove()
         })
         $('body').on('click', '.prototype-remove', function () {
           $(this).parents('tr').remove()
@@ -130,9 +143,12 @@ text: "Competition setup"
             $(this).parents('tr').first('td').find('span').remove()
             total = 0
             $('table *').filter(':input').each(function () {
-              total += parseInt($(this).val())
+              if ($(this).val() !== '') {
+                total += parseInt($(this).val())
+              }
             })
-            $('#prototype-total').html(total)
+            console.log(total)
+            $('#prototype-total').html(addCommas(total))
           } else {
             $('#prototype-total').html('0')
             $(this).addClass('govuk-input--error')
@@ -141,6 +157,18 @@ text: "Competition setup"
           }
 
         })
+        function addCommas(nStr)
+        {
+          nStr += ''
+          x = nStr.split('.')
+          x1 = x[0]
+          x2 = x.length > 1 ? '.' + x[1] : ''
+          var rgx = /(\d+)(\d{3})/
+          while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2')
+          }
+          return x1 + x2
+        }
       })
     </script>
 {% endblock %}
