@@ -5,147 +5,142 @@
 {% import "includes/message-alert.html" as messageAlert %}
 
 
-
-<main class="govuk-main-wrapper" id="main-content" role="main" style="
-    width: 960px;">
-
 {% block pageTitle %}
-      Funding information
+Funding information
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-        href: "#",
-        text: "Competition setup"
-    }) }}
+{{ govukBackLink({
+href: "#",
+text: "Competition setup"
+}) }}
 {% endblock %}
 
 {% block content %}
 
 <main class="govuk-main-wrapper" id="main-content" role="main">
-
-        
-            
-    <h1 class="govuk-heading-xl">
-        
-        Funding information
-        
-    </h1>
-
-        
-<div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        
-    
-<div class="govuk-form-group">
-    <label class="govuk-label" for="location-picker"><b>Search for a funder</b></label>
-    <select class="govuk-select" id="location-picker" data-auto-complete="true">
-<option value="Smart Open">Smart Open</option>
-<option value="ISCF">Industrial Strategy Challenge Fund (ISCF)</option>
-<option value="Innovate">Innovate UK core budget</option>
-<option value="SBRI">Small Business Research Initiative (SBRI)</option>
-<option value="International">International</option>
-<option value="European">European: Eureka, Eurostars and other EU</option>
-<option value="ATI">Aerospace Technology Institute (ATI)</option>
-<option value="APC">Advanced Propulsion Centre (APC)</option>
-<option value="CCAV">Centre for Connected and Autonomous Vehicles (CCAV)</option>
-<option value="IDP">Integrated Delivery Platform (IDP)</option>
-<option value="Other delivery partners">Other delivery partners</option>
-<option value="BEIS">Department for Business, Energy and Industrial Strategy (BEIS)</option>
-<option value="OLS">Office for Life Sciences (OLS)</option>
-<option value="DCMS">Department for Digital, Culture, Media and Sport (DCMS)</option>
-<option value="Other stakeholders">Other stakeholders</option>
-    </select>
-</div>
-          
-          <button type="submit" disabled="disabled" class="govuk-button">
-  Add funder
-</button>
-          
-         
-
-          <table class="govuk-table">
-                        <thead class="govuk-table__head">
-                            <tr class="govuk-table__row">
-                                <th class="govuk-table__header width-150" scope="col">Name</th>
-                                <th class="govuk-table__header" scope="col">Budget</th>
-                                <th class="govuk-table__header" scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody class="govuk-table__body">
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">Name of funder</td>
-                                <td class="govuk-table__cell"><div class="govuk-form-group" style=" 
-    margin-bottom: 0px;">
-  <input class="govuk-input" id="event-name" name="event-name" type="text" style="
-    width: 164px;
-">
-</div></td>
-                          
-                            <td class="govuk-table__cell" style="text-align: right"><a href="" class="govuk-link">Remove</a></td>
-                                
-                                
-                        </tbody>
-              
-              
-                    </table>
-        
-            
-                
-          <h2 class="govuk-heading-s govuk-!-margin-bottom-9">
-        
-       Total budget: £100,000,000
-        
-</h2>
-    
-           <h3 class="govuk-heading-m">
-        
-        Reporting fields
-        
-</h3>  
-            
-            
-        <div class="govuk-form-group">
-  <label class="govuk-label" for="one-quarter">
-      <b>PAF number</b>
-  </label>
-  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
-</div>
-          
+    <h1 class="govuk-heading-xl">Funding information</h1>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
             <div class="govuk-form-group">
-  <label class="govuk-label" for="one-quarter">
-      <b>Budget code</b>
-  </label>
-  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
-</div>
-         
-                 <div class="govuk-form-group">
-  <label class="govuk-label" for="one-quarter">
-      <b>Activity code</b>
-  </label>
-  <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
-</div>
-      
-          
-          <button type="submit" class="govuk-button">
-  Save and return
-</button>
-          
-         <p> <a class="govuk-link" href="">Return to competition setup</a></p>
+                <label class="govuk-label govuk-label-s" for="prototype-funders">Search for a funder</label>
+                <select class="govuk-select" id="prototype-funders" data-auto-complete="true">
+                    <option value="Advanced Propulsion Centre (APC)">Advanced Propulsion Centre (APC)</option>
+                    <option value="Aerospace Technology Institute (ATI)">Aerospace Technology Institute (ATI)</option>
+                    <option value="Centre for Connected and Autonomous Vehicles (CCAV)">Centre for Connected and Autonomous Vehicles (CCAV)</option>
+                    <option value="Department for Business, Energy and Industrial Strategy (BEIS)">Department for Business, Energy and Industrial Strategy (BEIS)</option>
+                    <option value="Department for Digital, Culture, Media and Sport (DCMS)">Department for Digital, Culture, Media and Sport (DCMS)</option>
+                    <option value="European: Eureka, Eurostars and other EU">European: Eureka, Eurostars and other EU</option>
+                    <option value="Industrial Strategy Challenge Fund (ISCF)">Industrial Strategy Challenge Fund (ISCF)</option>
+                    <option value="Innovate UK core budget">Innovate UK core budget</option>
+                    <option value="Integrated Delivery Platform (IDP)">Integrated Delivery Platform (IDP)</option>
+                    <option value="International">International</option>
+                    <option value="Office for Life Sciences (OLS)">Office for Life Sciences (OLS)</option>
+                    <option value="Small Business Research Initiative (SBRI)">Small Business Research Initiative (SBRI)</option>
+                    <option value="Smart Open">Smart Open</option>
+                    <option value="Other delivery partners">Other delivery partners</option>
+                    <option value="Other stakeholders">Other stakeholders</option>
+                </select>
+            </div>
+            <div class="govuk-form-group">
+                <button id="add-funder" type="submit" disabled="disabled" class="govuk-button" data-auto-complete-submit="">
+                    Add funder
+                </button>
+            </div>
 
-          
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header width-150" scope="col">Name</th>
+                        <th class="govuk-table__header" scope="col">Budget</th>
+                        <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
 
- 
+                </tbody>
+            </table>
 
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-9">Total budget: £<span id="prototype-total">0</span></h2>
 
-        
-    <p class="govuk-body govuk-!-margin-top-9 user-feedback"><span class="govuk-!-font-weight-bold">Need help with this service?</span> <a class="govuk-link" href="/info/contact">Contact us</a></p>
+            <h3 class="govuk-heading-m">Reporting fields</h3>
 
-          
-      
-    </main>
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s">PAF number</label>
+                <input class="govuk-input govuk-!-width-one-quarter" type="text">
+            </div>
 
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s">Budget code</label>
+                <input class="govuk-input govuk-!-width-one-quarter" type="text">
+            </div>
 
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s">Activity code</label>
+                <input class="govuk-input govuk-!-width-one-quarter" type="text">
+            </div>
 
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">Save and return</button>
+            </div>
 
+            <p>
+                <a class="govuk-link" href="">Return to competition setup</a>
+            </p>
+        </div>
+    </div>
+    <p class="govuk-body govuk-!-margin-top-9 user-feedback"><span class="govuk-!-font-weight-bold">Need help with this service?</span> <a class="govuk-link" href="#">Contact us</a></p>
+</main>
+
+{% endblock %}
+
+{% block pageScripts %}
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var total = 0;
+        $('#add-funder').on('click', function () {
+          var funderName = $('#prototype-funders').val()
+          $('tbody').prepend('<tr class="govuk-table__row">\n' +
+                '<td class="govuk-table__cell">' + funderName + '</td>\n' +
+                '<td class="govuk-table__cell">\n' +
+                    '<input class="prototype-input govuk-input govuk-input--width-10" type="text">\n' +
+                '</td>\n' +
+                '<td class="govuk-table__cell govuk-table__cell--numeric">\n' +
+                    '<a href="#" class="govuk-link prototype-remove">Remove</a>\n' +
+                '</td>\n' +
+            '</tr>')
+          $('[data-auto-complete-submit]').prop('disabled', true)
+          $('#prototype-funders').val('')
+          var tableLength = $('table tbody tr').length
+          if (tableLength > 0) {
+            $('[data-auto-complete-submit]').text('Add co-funder')
+          } else {
+            $('[data-auto-complete-submit]').text('Add funder')
+          }
+        })
+        $('body').on('click', '.prototype-remove', function () {
+          $(this).parents('tr').remove()
+          return false
+        })
+        $('body').on('input', '.prototype-input', function () {
+          if ($(this).val() !== '') {
+            $(this).removeClass('govuk-input--error')
+            $(this).parents('tr').removeClass('govuk-form-group--error')
+            $(this).parents('tr').first('td').find('span').remove()
+            $(this).parents('tr').first('td').find('span').remove()
+            total = 0
+            $('table *').filter(':input').each(function () {
+              total += parseInt($(this).val())
+            })
+            $('#prototype-total').html(total)
+          } else {
+            $('#prototype-total').html('0')
+            $(this).addClass('govuk-input--error')
+            $(this).parents('tr').addClass('govuk-form-group--error')
+            $(this).parents('tr').find('td:first-child').prepend('<span class="govuk-error-message">Please enter a budget</span>')
+          }
+
+        })
+      })
+    </script>
 {% endblock %}
