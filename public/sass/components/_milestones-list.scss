@@ -1,0 +1,47 @@
+
+ul,
+ol {
+  &.milestones-list {
+    > li {
+      padding:15px;
+      display: block;
+      position: relative;
+      margin-top: 10px;
+      border:1px solid $govuk-border-colour;
+
+      .milestone {
+        width: 75%;
+
+        .name {
+          font-weight: bold;
+        }
+
+        .date {
+          &:before {
+            content: " | ";
+          }
+        }
+
+        .information {
+          display: block;
+        }
+      }
+
+      .status {
+        position: absolute;
+        right: 17px;
+        top: 50%;
+        margin-top: -15px;
+      }
+    }
+
+    .milestone-inactive {
+      background-color: govuk-colour("grey-4");
+      color: $govuk-secondary-text-colour;
+    }
+
+    .milestone-highlighted {
+      border:1px solid $govuk-brand-colour;
+    }
+  }
+}

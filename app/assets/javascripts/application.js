@@ -9,18 +9,27 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
   var autoCompleteElement = $('[data-auto-complete]')
+  var autoCompleteSubmitElement = $('[data-auto-complete-submit]')
   if (autoCompleteElement.length > 0) {
-    var showAllValues
-    if (autoCompleteElement.children('option').length <= 20) {
-      showAllValues = true
-    } else {
-      showAllValues = false
-    }
+    autoCompleteElement.val('')
+    autoCompleteSubmitElement.prop('disabled', true)
+    jQuery(document).on('keydown', '.autocomplete__wrapper', function (e) {
+      if (e.which !== 13 && e.which !== 32) {
+        autoCompleteSubmitElement.prop('disabled', true)
+      }
+    })
+    var showAllValues = autoCompleteElement.children('option').length <= 20
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: autoCompleteElement[0],
       showAllValues: showAllValues,
       defaultValue: '',
-      confirmOnBlur: false
+      confirmOnBlur: false,
+      displayMenu: 'overlay',
+      onConfirm: function (confirmed) {
+        var selectedUserId = autoCompleteElement.children('option:contains(' + confirmed + ')').val()
+        autoCompleteElement.val(selectedUserId)
+        autoCompleteSubmitElement.prop('disabled', false)
+      }
     })
   }
 
