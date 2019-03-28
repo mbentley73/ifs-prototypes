@@ -147,13 +147,13 @@ text: "Competition setup"
                 total += parseInt($(this).val())
               }
             })
-            console.log(total)
             $('#prototype-total').html(addCommas(total))
           } else {
             $('#prototype-total').html('0')
             $(this).addClass('govuk-input--error')
             $(this).parents('tr').addClass('govuk-form-group--error')
             $(this).parents('tr').find('td:first-child').prepend('<span class="govuk-error-message">Please enter a budget</span>')
+            console.log('test')
           }
 
         })
